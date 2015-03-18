@@ -78,3 +78,6 @@ $RECYCLE.BIN/
 *.cbp
 *.layout
 *.depend
+
+# Windows Binary Release
+!bin/Release - Win32/*
