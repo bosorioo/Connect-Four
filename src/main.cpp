@@ -53,8 +53,13 @@ int main(int argc, char** argv)
 	else
 		std::cout << "The argument \"test\" can be passed as argument to run some tests on startup.\n";
 
+    std::cout << "Program Interaction:\n";
+    std::cout << "\tPress ESC anytime to restart game board.\n";
+    std::cout << "\tUse keys 1 and 2 to change the players 1 and 2 controllers.\n";
+    std::cout << "\tUse left mouse button to make a play (for human players).\n";
+
 	glutInit(&argc, argv);
-	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB); 
+	glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
 
 	glutInitWindowSize (500, 600);
 	glutInitWindowPosition (500, 200);
@@ -141,7 +146,7 @@ void mouseMove(int x, int y)
 {
 	float boardWidth = (gWindowWidth - HORIZONTAL_MARGIN);
 	x -= HORIZONTAL_MARGIN / 2.f;
-	
+
 	if (x < 0 || x > boardWidth)
 		gPlayerMouseColumn = -1;
 	else
@@ -178,7 +183,7 @@ void timerFunction(int arg)
 	}
 
 	glutPostRedisplay();
-	
+
 	if (cpuPlaying && cpuThinkTime >= CPU_THINK_INTERVAL)
 	{
 		game.update(UPDATE_INTERVAL_MS / 1000);
@@ -285,7 +290,7 @@ void drawGridMarks()
 		{
 			vic = false;
 			p = game.getPlayerFromPosition(BOARD_HEIGHT - row - 1, col, &vic);
-			
+
 
 			if (vic)
 			{
