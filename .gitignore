@@ -78,3 +78,7 @@ $RECYCLE.BIN/
 *.cbp
 *.layout
 *.depend
+
+# Win32 Binaries
+!bin/Release - Win32/*.dll
+!bin/Release - Win32/*.exe
