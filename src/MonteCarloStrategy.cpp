@@ -1,6 +1,7 @@
 #include "MonteCarloStrategy.h"
 #include <limits>
 #include <iostream>
+#include <cstdio>
 
 MonteCarloStrategy::MonteCarloStrategy(unsigned strength)
 {
@@ -61,7 +62,7 @@ int MonteCarloStrategy::expand(Game node)
 	{
 		node.play(node.getRandomPlay());
 	}
-	
+
 	return node.getWinner();
 }
 

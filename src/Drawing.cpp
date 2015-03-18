@@ -1,4 +1,5 @@
 #include "Drawing.h"
+#include <cmath>
 #include "glutInclude.h"
 
 void Draw::text(std::string text, int x, int y)

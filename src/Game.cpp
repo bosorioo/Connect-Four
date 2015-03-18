@@ -156,7 +156,7 @@ unsigned Game::getRandomPlay()
 	for (unsigned i = 0; i < board_width; i++)
 		if (canPlay(player_turn, i))
 			cols.push_back(i);
-	
+
 	if (cols.empty())
 		return 0;
 
@@ -167,7 +167,7 @@ void Game::update(float inteval)
 {
 	if (!isHumanPlaying())
 	{
-		unsigned nextMove;
+		unsigned nextMove = 0xFFFFFFFF;
 
 		if (player_turn == 1)
 		{
@@ -233,16 +233,17 @@ void Game::import_from_file(std::string filepath)
 		return;
 
 	startNewGame();
+    char c;
 
 	for (unsigned row = 0; row < board_height; row++)
 	{
 		for (unsigned col = 0; col < board_width; col++)
 		{
-			fscanf(f, "%c", &board[row][col].owner_player);
+			fscanf(f, "%c", &c);
 
-			if (board[row][col].owner_player == '2')
+			if (c == '2')
 				board[row][col].owner_player = -1;
-			else if (board[row][col].owner_player == '1')
+			else if (c == '1')
 				board[row][col].owner_player = 1;
 			else
 				board[row][col].owner_player = 0;

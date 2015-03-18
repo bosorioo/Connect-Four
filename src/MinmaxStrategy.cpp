@@ -15,7 +15,7 @@ MinMaxStrategy::MinMaxStrategy(unsigned deepness)
 unsigned MinMaxStrategy::getNextPlay(Game current)
 {
 	unsigned nextMove;
-	int v = minmax_procedure(current, &nextMove, 0);
+	minmax_procedure(current, &nextMove, 0);
 	return nextMove;
 }
 
@@ -48,7 +48,7 @@ int MinMaxStrategy::minmax_procedure(Game node, unsigned* nextMove, unsigned dee
 				child = node;
 				child.play(i);
 				value = minmax_procedure(child, 0, deepness + 1);
-				
+
 
 				if (value > bestValue || child.getWinner() == currentPlayer ||
 					(value == bestValue && rand() % 2))

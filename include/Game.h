@@ -4,6 +4,7 @@
 class Game;
 
 #include <vector>
+#include <string>
 #include "Player.h"
 
 class Game
