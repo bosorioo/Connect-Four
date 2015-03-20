@@ -79,3 +79,4 @@ $RECYCLE.BIN/
 
 # Windows Binary Release
 !bin/Release - Win32/*
+bin/Release/*
