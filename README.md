@@ -19,5 +19,7 @@ Also, the following keyboard inputs can be pressed:
 Note 1: Controller is who is going to make the decision for the player, defaulted to "Human Player" (waits for user input).  
 Controller can also be:  
 * "MinMax (5)" (an AI implementation of the Min-Max algorithm with max. deep of 5, pretty silly and the slowest).
+* "MinMax (8)" (Min-Max algorithm with max. deep of 8, even slower, takes 1.5 seconds at worse to decide a move).
 * "MonteCarlo (100)" (an AI implementation of the Monte Carlo algorithm with 100 as number of playouts before making the move).
 * "MonteCarlo (5000)" (Monte Carlo algorithm with 5000 playouts, slower than the 100 version and in theory the most difficult).
+* "Random CPU" (Decides randomly where to play, requires no computing power, but it plays nonsense).
