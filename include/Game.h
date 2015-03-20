@@ -33,6 +33,7 @@ public:
 	int checkWinner(unsigned row, unsigned col);
 	bool canPlay(int player, unsigned col);
 	void play(unsigned col);
+	void unplay();
 	unsigned getRandomPlay();
 
 	void update(float inteval);
@@ -51,6 +52,7 @@ private:
 
 	std::vector< std::vector<BoardSlot> > board;
 	unsigned board_width, board_height;
+	char last_col_played;
 	int player_turn;
 	int winner;
 	bool tied;

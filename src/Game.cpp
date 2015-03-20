@@ -43,6 +43,7 @@ void Game::startNewGame()
 	player_turn = 1;
 	winner = 0;
 	tied = false;
+	last_col_played = -1;
 }
 
 void Game::setPlayers(Player* p1, Player* p2)
@@ -143,6 +144,29 @@ void Game::play(unsigned col)
 				checkTie();
 
 			break;
+		}
+	}
+
+	setNextPlayerTurn();
+	last_col_played = (int)col;
+}
+
+void Game::unplay()
+{
+    if (last_col_played == -1)
+        return;
+
+	winner = 0;
+    tied = false;
+    setNextPlayerTurn();
+
+	for (unsigned i = 0; i < board_height; i++)
+	{
+		if (board[board_height - 1 - i][last_col_played].owner_player == player_turn)
+		{
+			board[board_height - 1 - i][last_col_played].owner_player = 0;
+			last_col_played = -1;
+			return;
 		}
 	}
 
