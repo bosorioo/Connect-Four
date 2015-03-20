@@ -76,6 +76,7 @@ int main(int argc, char** argv)
 	setup();
 	players.push_back(0);
 	players.push_back(new MinMaxStrategy(5));
+	players.push_back(new MinMaxStrategy(8));
 	players.push_back(new MonteCarloStrategy(100));
 	players.push_back(new MonteCarloStrategy(5000));
 	players.push_back(new RandomStrategy);
