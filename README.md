@@ -15,7 +15,8 @@ Also, the following keyboard inputs can be pressed:
 * ESC: restarts the game.
 * 1: Changes player 1 controller (note 1).
 * 2: Changes player 2 controller (note 1).  
-Note 1: Controller is who is going to make the decision for the player, defaulted to "Human Player" (waits for user input).
+
+Note 1: Controller is who is going to make the decision for the player, defaulted to "Human Player" (waits for user input).  
 Controller can also be:  
 * "MinMax (5)" (an AI implementation of the Min-Max algorithm with max. deep of 5, pretty silly and the slowest).
 * "MonteCarlo (100)" (an AI implementation of the Monte Carlo algorithm with 100 as number of playouts before making the move).
