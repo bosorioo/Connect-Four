@@ -33,7 +33,7 @@ public:
 	int checkWinner(unsigned row, unsigned col);
 	bool canPlay(int player, unsigned col);
 	void play(unsigned col);
-	void unplay();
+	void unplay(unsigned col);
 	unsigned getRandomPlay();
 
 	void update(float inteval);

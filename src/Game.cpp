@@ -129,7 +129,7 @@ bool Game::canPlay(int player, unsigned col)
 
 void Game::play(unsigned col)
 {
-	if (hasWinner() || hasTied())
+	if (hasWinner() || hasTied() || col >= board_width)
 		return;
 
 	for (unsigned i = 0; i < board_height; i++)
@@ -151,9 +151,9 @@ void Game::play(unsigned col)
 	last_col_played = (int)col;
 }
 
-void Game::unplay()
+void Game::unplay(unsigned col)
 {
-    if (last_col_played == -1)
+    if (col >= board_width)
         return;
 
 	winner = 0;
@@ -162,10 +162,9 @@ void Game::unplay()
 
 	for (unsigned i = 0; i < board_height; i++)
 	{
-		if (board[board_height - 1 - i][last_col_played].owner_player == player_turn)
+		if (board[i][col].owner_player == player_turn)
 		{
-			board[board_height - 1 - i][last_col_played].owner_player = 0;
-			last_col_played = -1;
+			board[i][col].owner_player = 0;
 			return;
 		}
 	}
